@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Claude project data
+.claude/
+
+# Output artifacts
+*.docx
+pdfs/
+
+# OS files
+.DS_Store
+Thumbs.db
