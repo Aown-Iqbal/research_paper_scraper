@@ -1,0 +1,986 @@
+{
+  "food_chemistry": {
+    "journal_name": "Food Chemistry",
+    "publisher": "Elsevier BV",
+    "issn_l": "0308-8146",
+    "homepage_url": "https://www.sciencedirect.com/journal/food-chemistry",
+    "guide_url": "https://www.elsevier.com/locate/foodchem",
+    "article_types": {
+      "Research Article": {
+        "word_limit": "7,500 (intro to conclusion, excluding references)",
+        "max_references": 40,
+        "max_figures_tables": 6
+      },
+      "Review Article": {
+        "word_limit": "10,000 (intro to conclusion, excluding references)",
+        "max_references": 120,
+        "max_figures_tables": 6
+      },
+      "Short Communication": {
+        "word_limit": "3,000 (intro to conclusion, excluding references)",
+        "max_references": 40,
+        "max_figures_tables": 6
+      }
+    },
+    "abstract_word_limit": 200,
+    "highlights_required": true,
+    "highlights_format": "3-5 bullet points, max 85 characters each",
+    "graphical_abstract_required": false,
+    "graphical_abstract_recommended": true,
+    "graphical_abstract_note": "Submit as separate file; does not count toward figure/table limit",
+    "reference_style": "APA 6th Edition (author-year)",
+    "reference_style_detail": "Alphabetical by first author surname; in-text: (Author, Year); 1-2 authors list all; 3+ use et al. from first citation; up to 20 authors listed in reference; journal name italicized; volume italicized",
+    "keywords_required": true,
+    "cover_letter_required": true,
+    "cover_letter_note": "Required; should include significance statement",
+    "competing_interests_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "ethics_statement_required": true,
+    "supplementary_material_allowed": true,
+    "formatting_requirements": "Double-spaced, continuous line numbers, Arial or Times New Roman font, 12pt",
+    "review_process": "Single anonymized",
+    "submission_system": "Editorial Manager",
+    "plagiarism_check": "Yes (iThenticate)",
+    "open_access_available": true,
+    "apc_charged": true,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English (US or UK, consistent)",
+    "searched_at": "2026-05-25T00:00:00Z"
+  },
+  "lwt": {
+    "journal_name": "LWT",
+    "openalex_id": "https://openalex.org/S26760650",
+    "homepage_url": "https://www.sciencedirect.com/journal/lwt",
+    "publisher": "Elsevier BV",
+    "issn_l": "0023-6438",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 0,
+    "article_types": {
+      "article": 50,
+      "review": 0,
+      "short_communication": 0,
+      "research_note": 0
+    },
+    "article_type_details": {
+      "Research papers": {
+        "word_limit": "5,500 (including abstract, excluding tables/figures/refs)",
+        "description": "Reports of complete, scientifically sound, original research."
+      },
+      "Review articles": {
+        "word_limit": "5,000 (text portion)",
+        "description": "Concise reviews of a focused aspect of a topic. Abstract must be pre-approved."
+      },
+      "Short communications": {
+        "word_limit": "3,000 (including abstract, excluding tables/figures/refs)",
+        "description": "Brief reports of original research of limited scope."
+      },
+      "Research notes": {
+        "word_limit": "2,500 (text portion)",
+        "description": "Shorter notes on specific findings."
+      }
+    },
+    "avg_abstract_length": 250.2,
+    "avg_paper_length": 9692,
+    "typical_author_count": 7.3,
+    "has_highlights": true,
+    "highlights_required": true,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "quality",
+      "protein",
+      "properties",
+      "oil",
+      "evaluation",
+      "attributes",
+      "functional",
+      "seed",
+      "drying",
+      "freezing",
+      "liquid",
+      "characteristics",
+      "antioxidant",
+      "food",
+      "physicochemical",
+      "profiles",
+      "acid",
+      "content",
+      "activity",
+      "starch"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "Editorial Manager",
+    "plagiarism_check": "Yes (iThenticate)",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English",
+    "formatting_requirements": "Double-spaced, continuous line and page numbers. Max 5 tables/figures. Max 50 references.",
+    "analyzed_at": "2026-05-22T06:56:07.890545+00:00"
+  },
+  "acs_food_science_and_technology": {
+    "journal_name": "ACS Food Science & Technology",
+    "openalex_id": "https://openalex.org/S4210224665",
+    "homepage_url": "https://pubs.acs.org/journal/afsthl",
+    "publisher": "American Chemical Society",
+    "issn_l": "2692-1944",
+    "article_types": {
+      "Research Articles": {
+        "word_limit": "No strict limit, but concise",
+        "description": "Original research in all areas of food science."
+      },
+      "Reviews": {
+        "word_limit": "No strict limit",
+        "description": "Comprehensive reviews of recent developments."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": true,
+    "graphical_abstract_required": true,
+    "reference_style": "ACS (numeric)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": true,
+    "significant_statement_description": "A 3-point statement on the manuscript's significance is required, uploaded as 'Supporting Information for Review Only'.",
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": true,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "ACS Publishing Center",
+    "plagiarism_check": "Yes (iThenticate)",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "journal_of_food_science": {
+    "journal_name": "Journal of Food Science (JFS)",
+    "openalex_id": "https://openalex.org/S96544422",
+    "homepage_url": "https://www.ift.org/news-and-publications/journals/journal-of-food-science",
+    "publisher": "Institute of Food Technologists (IFT)",
+    "issn_l": "0022-1147",
+    "article_types": {
+      "Research Articles": {
+        "word_limit": "7,500 (recommended, including references)",
+        "description": "Original research in any area of food science."
+      },
+      "Concise Reviews": {
+        "word_limit": "10,000",
+        "description": "Shorter, focused reviews."
+      },
+      "Hypotheses Papers": {
+        "word_limit": "10,000",
+        "description": "Papers proposing new hypotheses."
+      },
+      "Comprehensive Reviews": {
+        "word_limit": "8,000-15,000 (body text)",
+        "description": "In-depth reviews; submitted to CRFSFS."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Chicago Manual of Style (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": true,
+    "review_process": "Single anonymized",
+    "open_access_available": false,
+    "apc_charged": false,
+    "submission_system": "ScholarOne Manuscripts",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": true,
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "comprehensive_reviews_in_food_science_and_food_safety": {
+    "journal_name": "Comprehensive Reviews in Food Science & Food Safety",
+    "openalex_id": "https://openalex.org/S24917834",
+    "homepage_url": "https://www.ift.org/news-and-publications/journals/comprehensive-reviews-in-food-science-and-food-safety",
+    "publisher": "Institute of Food Technologists (IFT)",
+    "issn_l": "1541-4337",
+    "article_types": {
+      "Comprehensive Reviews": {
+        "word_limit": "8,000 (minimum) - 15,000 (maximum) for main text",
+        "description": "In-depth, critical reviews of narrow topics."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Chicago Manual of Style (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Main Body (structured by topic)",
+      "Conclusions and Future Directions"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": true,
+    "review_process": "Single anonymized",
+    "open_access_available": false,
+    "apc_charged": false,
+    "submission_system": "ScholarOne Manuscripts",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": true,
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "journal_of_agricultural_and_food_chemistry": {
+    "journal_name": "Journal of Agricultural and Food Chemistry",
+    "openalex_id": "https://openalex.org/S134644764",
+    "homepage_url": "https://pubs.acs.org/journal/jafcau",
+    "publisher": "American Chemical Society",
+    "issn_l": "0021-8561",
+    "article_types": {
+      "Research Articles": {
+        "word_limit": "No strict limit, but concise",
+        "description": "Original research on the chemical aspects of agriculture and food."
+      },
+      "Reviews": {
+        "word_limit": "No strict limit",
+        "description": "Comprehensive reviews of recent developments."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": true,
+    "graphical_abstract_required": true,
+    "reference_style": "ACS (numeric)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": true,
+    "significant_statement_description": "A 3-point statement on the manuscript's significance is required, uploaded as 'Supporting Information for Review Only'.",
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": true,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "ACS Publishing Center",
+    "plagiarism_check": "Yes (iThenticate)",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "international_journal_of_food_science_and_technology": {
+    "journal_name": "International Journal of Food Science & Technology",
+    "openalex_id": "https://openalex.org/S191479525",
+    "homepage_url": "https://academic.oup.com/ijfst",
+    "publisher": "Oxford University Press",
+    "issn_l": "0950-5423",
+    "article_types": {
+      "Original Articles": {
+        "word_limit": "Not strictly specified",
+        "description": "Original research relevant to food science and technology."
+      },
+      "Review Articles": {
+        "word_limit": "Not strictly specified",
+        "description": "Comprehensive reviews of the literature."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Harvard (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "ScholarOne Manuscripts",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "journal_of_the_science_of_food_and_agriculture": {
+    "journal_name": "Journal of the Science of Food and Agriculture",
+    "openalex_id": "https://openalex.org/S112817657",
+    "homepage_url": "https://scijournals.onlinelibrary.wiley.com/hub/journal/10970010/homepage/forauthors",
+    "publisher": "John Wiley & Sons",
+    "issn_l": "0022-5142",
+    "article_types": {
+      "Research Article": {
+        "word_limit": "6,000 (excluding references)",
+        "description": "Original research at the agriculture/food interface."
+      },
+      "Short Communication": {
+        "word_limit": "4,000 (excluding references)",
+        "description": "Brief reports of novel results."
+      },
+      "Review": {
+        "word_limit": "6,000 (excluding references)",
+        "description": "Summary and discussion of literature."
+      },
+      "Mini-Review": {
+        "word_limit": "4,000 (excluding references)",
+        "description": "Sharply focused review of cutting-edge advancements."
+      },
+      "Perspective": {
+        "word_limit": "6,000 (excluding references)",
+        "description": "Scholarly opinion piece on current or future directions."
+      },
+      "Spotlight": {
+        "word_limit": "3,000 (excluding references)",
+        "description": "Brief, lively article on a newsworthy advance."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Harvard (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": true,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": false,
+    "apc_charged": false,
+    "submission_system": "Wiley Authors Submission Portal",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": true,
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "food_research_international": {
+    "journal_name": "Food Research International",
+    "openalex_id": "https://openalex.org/S128445547",
+    "homepage_url": "https://www.journals.elsevier.com/food-research-international",
+    "publisher": "Elsevier BV",
+    "issn_l": "0963-9969",
+    "article_types": {
+      "Original Research": {
+        "word_limit": "Not strictly specified",
+        "description": "Novel and high impact research in food science."
+      },
+      "Review Papers": {
+        "word_limit": "Not strictly specified",
+        "description": "Critical reviews of the literature."
+      },
+      "Short Communications": {
+        "word_limit": "Not strictly specified",
+        "description": "Brief reports of new developments."
+      },
+      "Letters to the Editor": {
+        "word_limit": "Not strictly specified",
+        "description": "Commentary on published articles."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "APA (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "Editorial Manager",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "meat_science": {
+    "journal_name": "Meat Science",
+    "openalex_id": "https://openalex.org/S169779660",
+    "homepage_url": "https://www.journals.elsevier.com/meat-science",
+    "publisher": "Elsevier BV",
+    "issn_l": "0309-1740",
+    "article_types": {
+      "Original Research": {
+        "word_limit": "Not strictly specified",
+        "description": "Full-length research papers on meat science."
+      },
+      "Short Communications": {
+        "word_limit": "2,500",
+        "description": "Brief reports of original research of limited scope."
+      },
+      "Review Articles": {
+        "word_limit": "Not strictly specified",
+        "description": "Comprehensive reviews of recent developments."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Harvard (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "EVISE",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "journal_of_dairy_science": {
+    "journal_name": "Journal of Dairy Science",
+    "openalex_id": "https://openalex.org/S134792018",
+    "homepage_url": "https://www.journalofdairyscience.org/",
+    "publisher": "Elsevier on behalf of the American Dairy Science Association",
+    "issn_l": "0022-0302",
+    "article_types": {
+      "Full-length Papers": {
+        "word_limit": "30 manuscript pages (recommended)",
+        "description": "Original research in dairy science."
+      },
+      "Short Communications": {
+        "word_limit": "5 journal pages",
+        "description": "Brief reports of original research."
+      },
+      "Invited Reviews": {
+        "word_limit": "Not specified",
+        "description": "Comprehensive reviews of dairy science topics."
+      },
+      "Interpretive Summaries": {
+        "word_limit": "100 words",
+        "description": "A plain-language summary of the project's importance."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "CSE (numbered)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": true,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "Editorial Manager",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "food_control": {
+    "journal_name": "Food Control",
+    "openalex_id": "https://openalex.org/S119325186",
+    "homepage_url": "https://www.journals.elsevier.com/food-control",
+    "publisher": "Elsevier BV",
+    "issn_l": "0956-7135",
+    "article_types": {
+      "Original Research": {
+        "word_limit": "Not strictly specified",
+        "description": "Original research in food safety and process control."
+      },
+      "Authoritative Reviews": {
+        "word_limit": "Not strictly specified",
+        "description": "Comprehensive reviews of the literature."
+      },
+      "Short Communications": {
+        "word_limit": "Not strictly specified",
+        "description": "Brief reports of new developments."
+      },
+      "Comment Articles": {
+        "word_limit": "Not strictly specified",
+        "description": "Commentary on published articles or current issues."
+      },
+      "Position Papers": {
+        "word_limit": "Not strictly specified",
+        "description": "Papers stating a position on a topic."
+      }
+    },
+    "has_highlights": false,
+    "highlights_required": false,
+    "has_graphical_abstract": false,
+    "graphical_abstract_required": false,
+    "reference_style": "Harvard (author-year)",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "significant_statement_required": false,
+    "cover_letter_required": false,
+    "ethics_statement_required": true,
+    "conflict_of_interest_required": true,
+    "funding_statement_required": true,
+    "data_availability_required": false,
+    "supplementary_material_allowed": true,
+    "template_available": false,
+    "review_process": "Single anonymized",
+    "open_access_available": true,
+    "apc_charged": true,
+    "submission_system": "Editorial Manager",
+    "plagiarism_check": "Yes",
+    "copyright_transfer_required": false,
+    "license_options": "CC BY or CC BY-NC-ND",
+    "preprint_allowed": true,
+    "language_requirements": "English"
+  },
+  "journal of dairy science": {
+    "journal_name": "Journal of Dairy Science",
+    "openalex_id": "https://openalex.org/S28349394",
+    "homepage_url": "https://www.journals.elsevier.com/journal-of-dairy-science",
+    "publisher": "Elsevier BV",
+    "issn_l": "0022-0302",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 3,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 302.4,
+    "avg_paper_length": 4085,
+    "typical_author_count": 7.2,
+    "has_highlights": true,
+    "has_graphical_abstract": true,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "dairy",
+      "milk",
+      "cows",
+      "holstein",
+      "rumen",
+      "lactation",
+      "cheese",
+      "quality",
+      "yield",
+      "stress",
+      "cattle",
+      "heat",
+      "lactating",
+      "traits",
+      "fat",
+      "acid",
+      "production",
+      "silage",
+      "methane",
+      "review"
+    ],
+    "analyzed_at": "2026-05-24T07:09:15.799094+00:00"
+  },
+  "acs food science & technology": {
+    "journal_name": "ACS Food Science & Technology",
+    "openalex_id": "https://openalex.org/S4210220491",
+    "homepage_url": "https://pubs.acs.org/journal/afsthl",
+    "publisher": "American Chemical Society",
+    "issn_l": "2692-1944",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 2,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 171.3,
+    "avg_paper_length": 10144,
+    "typical_author_count": 5.6,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "properties",
+      "antioxidant",
+      "functional",
+      "sub",
+      "issue",
+      "free",
+      "quality",
+      "fermentation",
+      "peel",
+      "stability",
+      "physicochemical",
+      "microbial",
+      "application",
+      "enriched",
+      "food",
+      "dietary",
+      "protein",
+      "sensory",
+      "production",
+      "microwave"
+    ],
+    "analyzed_at": "2026-05-25T07:10:54.536064+00:00"
+  },
+  "journal of food science": {
+    "journal_name": "Journal of Food Science",
+    "openalex_id": "https://openalex.org/S23579880",
+    "homepage_url": "http://www.wiley.com/bw/journal.asp?ref=0022-1147",
+    "publisher": "Wiley",
+    "issn_l": "0022-1147",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 0,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 236.6,
+    "avg_paper_length": null,
+    "typical_author_count": 6.9,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "quality",
+      "food",
+      "properties",
+      "functional",
+      "sensory",
+      "physicochemical",
+      "evaluation",
+      "protein",
+      "acid",
+      "characteristics",
+      "fermentation",
+      "machine",
+      "learning",
+      "milk",
+      "non",
+      "interactions",
+      "structural",
+      "performance",
+      "drying",
+      "antimicrobial"
+    ],
+    "analyzed_at": "2026-05-25T07:23:25.769670+00:00"
+  },
+  "comprehensive reviews in food science and food safety": {
+    "journal_name": "Comprehensive Reviews in Food Science and Food Safety",
+    "openalex_id": "https://openalex.org/S336866",
+    "homepage_url": "http://www.wiley.com/bw/journal.asp?ref=1541-4337&site=1",
+    "publisher": "Wiley",
+    "issn_l": "1541-4337",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 1,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 215.3,
+    "avg_paper_length": 18988,
+    "typical_author_count": 5.4,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "food",
+      "review",
+      "processing",
+      "applications",
+      "mechanisms",
+      "strategies",
+      "technologies",
+      "challenges",
+      "advances",
+      "functional",
+      "products",
+      "emerging",
+      "proteins",
+      "protein",
+      "foods",
+      "packaging",
+      "quality",
+      "safety",
+      "health",
+      "plant"
+    ],
+    "analyzed_at": "2026-05-25T07:36:07.574039+00:00"
+  },
+  "journal of agricultural and food chemistry": {
+    "journal_name": "Journal of Agricultural and Food Chemistry",
+    "openalex_id": "https://openalex.org/S134644764",
+    "homepage_url": "http://pubs.acs.org/journal/jafcau",
+    "publisher": "American Chemical Society",
+    "issn_l": "0021-8561",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 0,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 171.5,
+    "avg_paper_length": null,
+    "typical_author_count": 7.7,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "sub",
+      "molecular",
+      "against",
+      "stress",
+      "via",
+      "microbial",
+      "drought",
+      "rice",
+      "dual",
+      "biosynthesis",
+      "acid",
+      "derived",
+      "engineering",
+      "induced",
+      "development",
+      "performance",
+      "antifungal",
+      "activity",
+      "mechanism",
+      "enhances"
+    ],
+    "analyzed_at": "2026-05-25T07:48:24.983825+00:00"
+  },
+  "international journal of food science & technology": {
+    "journal_name": "International Journal of Food Science & Technology",
+    "openalex_id": "https://openalex.org/S106548112",
+    "homepage_url": "https://onlinelibrary.wiley.com/journal/13652621",
+    "publisher": "Wiley",
+    "issn_l": "0950-5423",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 0,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 194.0,
+    "avg_paper_length": null,
+    "typical_author_count": 6.0,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "quality",
+      "functional",
+      "properties",
+      "stability",
+      "production",
+      "flour",
+      "antioxidant",
+      "evaluation",
+      "food",
+      "phenolic",
+      "storage",
+      "nutritional",
+      "review",
+      "chemical",
+      "milk",
+      "sustainable",
+      "postharvest",
+      "extraction",
+      "composition",
+      "powder"
+    ],
+    "analyzed_at": "2026-05-25T09:15:51.604383+00:00"
+  },
+  "foods": {
+    "journal_name": "Foods",
+    "openalex_id": "https://openalex.org/S2737939966",
+    "homepage_url": "http://www.mdpi.com/journal/foods",
+    "publisher": "Multidisciplinary Digital Publishing Institute",
+    "issn_l": "2304-8158",
+    "papers_analyzed": 50,
+    "pdfs_extracted": 0,
+    "article_types": {
+      "article": 50
+    },
+    "avg_abstract_length": 212.1,
+    "avg_paper_length": null,
+    "typical_author_count": 6.0,
+    "has_highlights": false,
+    "has_graphical_abstract": false,
+    "reference_style": "numeric",
+    "common_sections": [
+      "Introduction",
+      "Materials and Methods",
+      "Results",
+      "Discussion",
+      "Conclusion"
+    ],
+    "top_keywords": [
+      "quality",
+      "antioxidant",
+      "properties",
+      "food",
+      "activity",
+      "protein",
+      "volatile",
+      "china",
+      "tea",
+      "evaluation",
+      "anti",
+      "rice",
+      "non",
+      "sensory",
+      "product",
+      "comparative",
+      "products",
+      "acid",
+      "nutritional",
+      "application"
+    ],
+    "analyzed_at": "2026-05-25T12:56:59.260406+00:00"
+  }
+}

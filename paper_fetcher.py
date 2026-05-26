@@ -25,7 +25,7 @@ import time
 import random
 import argparse
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 
@@ -48,6 +48,22 @@ HEADERS = {
 }
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _load_dotenv(path: str = ".env"):
+    """Load key=value pairs from a .env file into os.environ (no-op if missing)."""
+    if not os.path.exists(path):
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            key = key.strip()
+            value = value.strip().strip('"').strip("'")
+            if key and key not in os.environ:
+                os.environ[key] = value
+
 
 def sleep():
     time.sleep(random.uniform(2.0, 5.0))
@@ -154,7 +170,7 @@ def fetch_openalex(query: str, year_range: str, max_results: int) -> list[dict]:
                 "open_access":  oa_info.get("is_oa", False),
                 "oa_pdf_url":   oa_pdf_url,
                 "pdf_path":     None,
-                "fetched_at":   datetime.utcnow().isoformat(),
+                "fetched_at":   datetime.now(timezone.utc).isoformat(),
             })
 
         print(f"  Page {page}: {len(results)} results | collected: {len(papers)}")
@@ -197,13 +213,140 @@ def download_direct(url: str, output_path: str) -> bool:
         return False
 
 
+# ── Stage 2b: Unpaywall API ────────────────────────────────────────────────────
+
+def download_unpaywall(doi: str, output_path: str) -> bool:
+    """Try Unpaywall API for OA PDF URL, then download directly."""
+    try:
+        url = f"https://api.unpaywall.org/v2/{doi}?email=research@example.com"
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code != 200:
+            return False
+
+        data = resp.json()
+
+        best_loc = data.get("best_oa_location") or {}
+        pdf_url = best_loc.get("url_for_pdf")
+
+        if not pdf_url:
+            for loc in data.get("oa_locations") or []:
+                pdf_url = loc.get("url_for_pdf")
+                if pdf_url:
+                    break
+
+        if not pdf_url:
+            return False
+
+        return download_direct(pdf_url, output_path)
+
+    except Exception:
+        return False
+
+
+# ── Stage 2c: CORE API ─────────────────────────────────────────────────────────
+
+def download_core(doi: str, output_path: str) -> bool:
+    """Try CORE API for download URL, then download directly."""
+    try:
+        url = f"https://api.core.ac.uk/v3/works/doi/{doi}"
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if resp.status_code != 200:
+            return False
+
+        data = resp.json()
+
+        pdf_url = data.get("downloadUrl")
+
+        if not pdf_url:
+            for link in data.get("links") or []:
+                if link.get("type") == "download":
+                    pdf_url = link.get("url")
+                    if pdf_url:
+                        break
+
+        if not pdf_url:
+            return False
+
+        return download_direct(pdf_url, output_path)
+
+    except Exception:
+        return False
+
+
+# ── Stage 2d: PMC / E-utilities ────────────────────────────────────────────────
+
+def download_pmc(doi: str, output_path: str) -> bool:
+    """Resolve DOI → PMCID via NCBI ID converter, then download from PMC."""
+    try:
+        conv_url = f"https://www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids={doi}&format=json"
+        resp = requests.get(conv_url, headers=HEADERS, timeout=20)
+        if resp.status_code != 200:
+            return False
+
+        data = resp.json()
+        records = data.get("records") or []
+        if not records:
+            return False
+
+        pmcid = records[0].get("pmcid")
+        if not pmcid:
+            return False
+
+        pdf_url = f"https://www.ncbi.nlm.nih.gov/pmc/articles/{pmcid}/pdf/"
+        return download_direct(pdf_url, output_path)
+
+    except Exception:
+        return False
+
+
+# ── Stage 2e: Elsevier API ────────────────────────────────────────────────────
+
+def download_elsevier(doi: str, api_key: str, output_path: str) -> bool:
+    """Download PDF from Elsevier API (only for 10.1016/ DOIs)."""
+    try:
+        url = f"https://api.elsevier.com/content/article/doi/{doi}"
+        headers = {
+            **HEADERS,
+            "X-ELS-APIKey": api_key,
+            "Accept": "application/pdf",
+        }
+        resp = requests.get(url, headers=headers, timeout=60, stream=True)
+        if resp.status_code != 200:
+            return False
+
+        with open(output_path, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
+
+        with open(output_path, "rb") as f:
+            magic = f.read(4)
+        if magic != b"%PDF":
+            os.remove(output_path)
+            return False
+
+        return True
+
+    except Exception:
+        if os.path.exists(output_path):
+            os.remove(output_path)
+        return False
+
+
 # ── Stage 2: Sci-Hub download (pure requests) ────────────────────────────────
 
+_cached_domain: str | None = None
+
+
 def get_working_domain() -> str | None:
+    global _cached_domain
+    if _cached_domain:
+        return _cached_domain
     for domain in SCIHUB_DOMAINS:
         try:
-            r = requests.get(domain, headers=HEADERS, timeout=10)
+            r = requests.get(domain, headers=HEADERS, timeout=5)
             if r.status_code == 200:
+                _cached_domain = domain
                 return domain
         except Exception:
             continue
@@ -288,7 +431,7 @@ def download_scihub(doi: str, domain: str, output_path: str) -> bool:
 
 # ── Main PDF fetcher ──────────────────────────────────────────────────────────
 
-def fetch_pdfs(papers: list[dict]) -> list[dict]:
+def fetch_pdfs(papers: list[dict], elsevier_api_key: str | None = None) -> list[dict]:
     Path(PDF_DIR).mkdir(exist_ok=True)
 
     print("[Sci-Hub] Finding working domain...")
@@ -301,9 +444,10 @@ def fetch_pdfs(papers: list[dict]) -> list[dict]:
     has_doi = [p for p in papers if p.get("doi")]
     no_doi  = [p for p in papers if not p.get("doi")]
 
-    oa_count     = 0
-    scihub_count = 0
-    failed       = []
+    elsevier_count = 0
+    scihub_count   = 0
+    oa_count       = 0
+    failed         = []
 
     print(f"[PDFs] {len(has_doi)} papers with DOIs | {len(no_doi)} without\n")
 
@@ -321,22 +465,30 @@ def fetch_pdfs(papers: list[dict]) -> list[dict]:
 
         success = False
 
-        # Try 1: OA direct link via requests
-        if paper.get("oa_pdf_url"):
-            print(f"    [->] OA direct...")
-            success = download_direct(paper["oa_pdf_url"], out_path)
+        # Try 1: Elsevier API (only for 10.1016/ DOIs)
+        if elsevier_api_key and doi.startswith("10.1016/"):
+            print(f"    [->] Elsevier API...")
+            success = download_elsevier(doi, elsevier_api_key, out_path)
             if success:
-                print(f"    [OK] OA success")
-                oa_count += 1
+                print(f"    [OK] Elsevier success")
+                elsevier_count += 1
 
-        # Try 2: Sci-Hub via real browser
+        # Try 2: Sci-Hub via pure requests
         if not success and scihub_domain:
-            print(f"    [->] Sci-Hub...")
             sleep()
+            print(f"    [->] Sci-Hub...")
             success = download_scihub(doi, scihub_domain, out_path)
             if success:
                 print(f"    [OK] Sci-Hub success")
                 scihub_count += 1
+
+        # Try 3: OA direct link via requests
+        if not success and paper.get("oa_pdf_url"):
+            print(f"    [->] OA direct...")
+            success = download_direct(paper["oa_pdf_url"], out_path)
+            if success:
+                print(f"    [OK] OA direct success")
+                oa_count += 1
 
         if success:
             paper["pdf_path"] = out_path
@@ -348,10 +500,11 @@ def fetch_pdfs(papers: list[dict]) -> list[dict]:
 
     # Summary
     print(f"\n[PDFs] Summary")
-    print(f"  OA direct : {oa_count}")
-    print(f"  Sci-Hub   : {scihub_count}")
-    print(f"  Failed    : {len(failed)}")
-    print(f"  No DOI    : {len(no_doi)}")
+    print(f"  Elsevier   : {elsevier_count}")
+    print(f"  Sci-Hub    : {scihub_count}")
+    print(f"  OA direct  : {oa_count}")
+    print(f"  Failed     : {len(failed)}")
+    print(f"  No DOI     : {len(no_doi)}")
 
     if failed:
         print(f"\n[Sci-Net] Request these manually at https://sci-net.xyz")
@@ -363,7 +516,7 @@ def fetch_pdfs(papers: list[dict]) -> list[dict]:
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-def run(query: str, year_range: str, max_results: int, skip_pdfs: bool):
+def run(query: str, year_range: str, max_results: int, skip_pdfs: bool, elsevier_api_key: str | None = None):
     papers = fetch_openalex(query, year_range, max_results)
 
     if not papers:
@@ -377,7 +530,7 @@ def run(query: str, year_range: str, max_results: int, skip_pdfs: bool):
     if skip_pdfs:
         return
 
-    papers = fetch_pdfs(papers)
+    papers = fetch_pdfs(papers, elsevier_api_key)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(papers, f, ensure_ascii=False, indent=2)
@@ -387,13 +540,17 @@ def run(query: str, year_range: str, max_results: int, skip_pdfs: bool):
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    _load_dotenv()
+
     parser = argparse.ArgumentParser(description="Paper fetcher: OpenAlex + Sci-Hub")
-    parser.add_argument("--query",   required=True)
-    parser.add_argument("--years",   default="2019-2026")
-    parser.add_argument("--max",     type=int, default=100)
-    parser.add_argument("--no-pdfs", action="store_true")
-    parser.add_argument("--output",  default="papers.json")
+    parser.add_argument("--query",         required=True)
+    parser.add_argument("--years",         default="2019-2026")
+    parser.add_argument("--max",           type=int, default=100)
+    parser.add_argument("--no-pdfs",       action="store_true")
+    parser.add_argument("--output",        default="papers.json")
+    parser.add_argument("--elsevier-key",  default=os.environ.get("ELSEVIER_API_KEY"),
+                        help="Elsevier API key (or set ELSEVIER_API_KEY in .env)")
     args = parser.parse_args()
 
     OUTPUT_FILE = args.output
-    run(args.query, args.years, args.max, args.no_pdfs)
+    run(args.query, args.years, args.max, args.no_pdfs, args.elsevier_key)
